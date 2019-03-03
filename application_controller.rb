@@ -11,6 +11,10 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/result' do
+    @user_name = params[:name]
+    @user_anime_manga = Anime_and_manga.new(@user_name)
+    @user_anime_manga.get_info
+    
     erb :result
   end
   

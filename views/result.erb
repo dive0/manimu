@@ -20,6 +20,9 @@
     
     <div class="container-fluid">
       <h1>Manimu</h1>
+      <% @user_anime_manga.names.each do |name| %>
+        <p><%= name %></p>
+      <% end %>
     </div>
     
   </body>
