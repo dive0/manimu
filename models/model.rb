@@ -5,11 +5,11 @@ require 'open-uri'
 require 'pp'
 
 class Anime_and_manga
-    attr_reader :name, :names, :types
+    attr_reader :name, :combined_info, :types
     
     def initialize(name)
         @name = name
-        @names = []
+        @combined_info = []
     end
     
     def get_info
@@ -19,12 +19,16 @@ class Anime_and_manga
             item1.children.each do |item2|
                 item2.children.each do |item3|
                     item3.children.each do |item4|
-                        @names << item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
+                        @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
+                        item4.children.each do |item5|
+                            
+                        end
                     end
                 end
             end
         end
     end
 end
+
 
 
