@@ -23,11 +23,10 @@ class Anime_and_manga
             item1.children.each do |item2|
                 item2.children.each do |item3|
                     item3.children.each do |item4|
-                        @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
                         
+                        @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value.capitalize + ")"
+                        pp @combined_info << item4.children
                         # pp item4.children[5] images
-                        
-                        
                     end
                 end
             end
