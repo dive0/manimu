@@ -4,18 +4,6 @@ require 'nokogiri'
 require 'open-uri'
 require 'pp'
 
-class Everything
-    
-    def initialize(result_name, type)
-        @result_name = result_name
-        @type = type
-    end
-    
-    # def combine
-    #     @result_name + "(" + @type + ")"
-    # end
-end
-
 class Anime_and_manga
     attr_reader :name, :names, :types
     
