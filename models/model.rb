@@ -13,26 +13,24 @@ class Anime_and_manga
     end
     
     def get_info
-        pp anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
+        # begin
+            anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
+        # rescue
+        #     @combined_info = ['Sorry, Anime/Manga not found']
+        # end
         
         anime_manga.children.each do |item1|
             item1.children.each do |item2|
                 item2.children.each do |item3|
                     item3.children.each do |item4|
                         @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
-                        item4.children.each do |item5|
-                            
-                        end
+                        
+                        # pp item4.children[5] images
+                        
+                        
                     end
                 end
             end
         end
     end
-    
-    # def get_type
-
-
 end
-
-
-
