@@ -13,6 +13,7 @@ class Anime_and_manga
     end
     
     def get_info
+        begin
         pp anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
         
         anime_manga.children.each do |item1|
@@ -26,6 +27,9 @@ class Anime_and_manga
                 end
             end
         end
+        rescue
+            @combined_info = ["cannot find"]
+    end
     end
 end
 
