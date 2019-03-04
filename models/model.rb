@@ -11,9 +11,9 @@ class Everything
         @type = type
     end
     
-    def combine
-        @result_name + "(" + @type + ")"
-    end
+    # def combine
+    #     @result_name + "(" + @type + ")"
+    # end
 end
 
 class Anime_and_manga
