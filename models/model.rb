@@ -4,9 +4,20 @@ require 'nokogiri'
 require 'open-uri'
 require 'pp'
 
-# Fetch and parse HTML document
+class Everything
+    
+    def initialize(result_name, type)
+        @result_name = result_name
+        @type = type
+    end
+    
+    def combine
+        @result_name + "(" + @type + ")"
+    end
+end
+
 class Anime_and_manga
-    attr_reader :name, :names
+    attr_reader :name, :names, :types
     
     def initialize(name)
         @name = name
@@ -25,9 +36,5 @@ class Anime_and_manga
                 end
             end
         end
-                
-            
-        
     end
-    
 end
