@@ -27,9 +27,11 @@ class Anime_and_manga
                         # pp item4.children[5].attributes["src"].value
                         item4.children.each do |item5|
                             if item5.attributes.include?("src") == true
-                                pp item5.attributes["src"].value
+                                @images << item5.attributes["src"].value
                             end
                         end
+                        
+                        
                     end
                 end
             end
