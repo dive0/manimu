@@ -15,13 +15,15 @@ class Anime_and_manga
     
     def get_info
         begin
-        pp anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
+        anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
         
         anime_manga.children.each do |item1|
             item1.children.each do |item2|
                 item2.children.each do |item3|
                     item3.children.each do |item4|
-                        
+                        @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value.capitalize + ")"
+                        @combined_info << item4.children
+                        # pp item4.children[5] images
                         @combined_info << item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
                         item4.children
                         # pp item4.children[5].attributes["src"].value
@@ -39,3 +41,4 @@ class Anime_and_manga
         end
     end
 end
+   

@@ -36,3 +36,13 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+body {
+  background-color: lightblue;
+}
+
+/*@media print {*/
+/*  a[href]:after {*/
+/*    content: none !important;*/
+/*  }*/
+/*}*/
