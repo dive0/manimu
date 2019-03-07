@@ -28,12 +28,18 @@ class Anime_and_manga
                                 if item5.attributes["type"].value == "Genres"
                                     @combined_info << item5.children[0]
                                 end
-                            end
-                            
-                            if item5.attributes.include?("type") == true
-                                if item5.attributes["type"].value == "Plot Summary"
+                                if item5.attributes["type"].value == "Number of episodes"
                                     @combined_info << item5.children[0]
                                 end
+                                if item5.attributes["type"].value == "Number of pages"
+                                    @combined_info << item5.children[0]
+                                end
+                                if item5.attributes["type"].value == "Vintage"
+                                    @combined_info << item5.children[0]
+                                end
+                                if item5.attributes["type"].value == "Plot Summary"
+                                    @combined_info << item5.children[0]
+                                end 
                             end
 
                             if item5.attributes.include?("src") == true
@@ -45,7 +51,7 @@ class Anime_and_manga
             end
         end
         rescue
-            @combined_info = ["Sorry, Anime/Manga not found"]
+            @combined_info = ["Sorry, Anime and or Manga not found"]
         end
     end
 end
