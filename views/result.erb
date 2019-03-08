@@ -17,11 +17,29 @@
     <script src="js/script.js"></script>
   </head>
   <body>
-    
+
     <div class="container-fluid">
       <h1>Manimu</h1>
-      <% @user_anime_manga.combined_info.each do |info| %>
-        <h3><%= info %></h3>
+      <img src=<%= @user_anime_manga.images[0] %>>
+      <% i=0 %>
+      <% while i<@user_anime_manga.images.length %>
+        
+        <% @user_anime_manga.combined_info.each do |info| %>
+        
+          <h3><%= info %></h3>
+        
+          <!--<%# i = 0 %>-->
+          <!--<%# while i<@user_anime_manga.genres.length %>-->
+            <!--<h3><%#= @user_anime_manga.genres[i] %></h3>-->
+          <!--    <%# i += 1 %>-->
+        <!--  <%# end %>-->
+        <%# end %>
+         <!--<h3><%# @user_anime_manga.genres %></h3>-->
+          <% if info.include?("Vintage: ") == true %>
+            <% i += 1 %>
+            <img src=<%= @user_anime_manga.images[i] %>>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
     

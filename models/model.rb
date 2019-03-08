@@ -5,16 +5,17 @@ require 'open-uri'
 require 'pp'
 
 class Anime_and_manga
-    attr_reader :name, :combined_info, :types, :images
+    attr_reader :name, :combined_info, :types, :images, :genres
     
     def initialize(name)
         @name = name
         @combined_info = []
         @images = []
+        @genres = []
     end
     
     def get_info
-        begin
+        # begin
         anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
         
         anime_manga.children.each do |item1|
@@ -26,19 +27,19 @@ class Anime_and_manga
                         item4.children.each do |item5|
                             if item5.attributes.include?("type") == true
                                 if item5.attributes["type"].value == "Genres"
-                                    @combined_info << item5.children[0]
+                                    @genres << item5.children[0]
                                 end
                                 if item5.attributes["type"].value == "Number of episodes"
-                                    @combined_info << item5.children[0]
+                                    @combined_info << "Number of Episodes: " + item5.children[0]
                                 end
                                 if item5.attributes["type"].value == "Number of pages"
-                                    @combined_info << item5.children[0]
+                                    @combined_info << "Number of Pages: " + item5.children[0]
                                 end
                                 if item5.attributes["type"].value == "Vintage"
-                                    @combined_info << item5.children[0]
+                                    @combined_info << "Vintage: " + item5.children[0]
                                 end
                                 if item5.attributes["type"].value == "Plot Summary"
-                                    @combined_info << item5.children[0]
+                                    @combined_info << "Plot Summary: " + item5.children[0]
                                 end 
                             end
 
@@ -50,9 +51,8 @@ class Anime_and_manga
                 end
             end
         end
-        rescue
-            @combined_info = ["Sorry, Anime and or Manga not found"]
-        end
+        # rescue
+        #     @combined_info = ["Sorry, Anime and or Manga not found"]
+        # end
     end
 end
-   
