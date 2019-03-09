@@ -36,3 +36,10 @@ form.example::after {
   clear: both;
   display: table;
 }
+body {
+  background-color: lightblue;
+      
+}
+#test1,#searchbar1{
+  text-align: center;
+}
