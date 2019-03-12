@@ -26,19 +26,18 @@ class Anime_and_manga
                             item4.children.each do |item5|
                                 if item5.attributes.include?("type") == true
                                     if item5.attributes["type"].value == "Genres"
-                                        @combined_info << item5.children[0]
-                                        
-                                    end
-                                    if item5.attributes["type"].value == "Number of episodes"
+                                        @combined_info << "Genres: " + item5.children[0]
+                                    
+                                    elsif item5.attributes["type"].value == "Number of episodes"
                                         @combined_info << "Number of Episodes: " + item5.children[0]
-                                    end
-                                    if item5.attributes["type"].value == "Number of pages"
+                                    
+                                    elsif item5.attributes["type"].value == "Number of pages"
                                         @combined_info << "Number of Pages: " + item5.children[0]
-                                    end
-                                    if item5.attributes["type"].value == "Vintage"
+                                    
+                                    elsif item5.attributes["type"].value == "Vintage"
                                         @combined_info << "Vintage: " + item5.children[0]
-                                    end
-                                    if item5.attributes["type"].value ==   "Plot Summary"
+                                    
+                                    elsif item5.attributes["type"].value ==   "Plot Summary"
                                         @combined_info << "Plot Summary: " + item5.children[0]
                                     end 
                                 end

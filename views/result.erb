@@ -112,8 +112,13 @@
       <% i=0 %>
       <% while i<@user_anime_manga.images.length %>
         <% @user_anime_manga.combined_info.each do |info| %>
-          
-          <h3><%= info %></h3>
+        
+          <% if info.include?('Genres: ') %>
+            <% info.slice!('Genres: ') %>
+            <h3 class="col-sm-12"><em><%= info.capitalize %></em></h3>
+          <% else %>
+            <h3><%= info %></h3>
+          <% end %>
           
           <% if info.include?("Vintage: ") == true %>
             <% i += 1 %>
