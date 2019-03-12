@@ -76,11 +76,35 @@
     #searchbar1{
       text-align:center;
     }
+    #logo{
+      text-align:center;
+    }
   </style>
-    <img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">
+  
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+  </div>
+  
+  <div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      // document.body.style.backgroundColor = "white";
+    }
+  </script>
     <div class="container-fluid">
-      <h1 id="test1">Manimu</h1>
-      <form method="post" action="/result" style="margin:auto;max-width:300px" id="searchbar1">
+      <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>
+      <form method="post" class= "example" action="/result" style="margin:auto;max-width:300px" id="searchbar1">
         <input type="text" placeholder="Search.." name="name">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
