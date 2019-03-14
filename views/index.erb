@@ -94,13 +94,27 @@
       <img src="https://media.giphy.com/media/uxebmaHfjsuCA/giphy.gif" alt="Tree" class="responsive" width="600" height="400">
     </div>   
 
+    <!--<div class="container-fluid">-->
+    <!--  <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148">-->
+    <!--</div>-->
+    
     <div class="container-fluid">
-      <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148">
+      <h1>Top 10 Currently Airing Animes</h1>
+      <% i = 0 %>
+      <% @airing_info.each do |info| %>
+        <h3><%= info %></h3>
+        <% if info.include?("Rank: ") %>
+          <img src=<%= @airing_img[i] %>>
+          <% i += 1 %>
+        <% end %>
+        
+        <% if info.include?("Score: ") %>
+          <br>
+        <% end %>
+      <% end %>
     </div>
     
-    <!--<div class="container-fluid">-->
-    <!--  <p><%#= @airing_array %></p>-->
-    <!--</div>-->
+    
     
   </body>
 </html>

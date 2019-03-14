@@ -51,7 +51,7 @@ class Anime_and_manga
                 end
             end
         rescue
-            @combined_info = ["Sorry, Anime and or Manga not found"]
+            @combined_info << "Sorry, Anime and or Manga not found"
         end
     end
 end
