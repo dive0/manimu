@@ -1,3 +1,4 @@
+<!--credit goes to https://giphy.com/stickers/my-art-uxebmaHfjsuCA for tree image-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,12 +18,12 @@
     <!-- custom JS -->
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <body>
   <style>
     body {
       background-color: lightblue;
-      
     }
 
     .sidenav {
@@ -65,7 +66,7 @@
     }
     .topnav {
       overflow: hidden;
-      /*background-color: #5696D6;*/
+      background-color: #5696D6;
     }
 
     .topnav a {
@@ -73,9 +74,11 @@
       color: #f2f2f2;
       text-align: center;
     }
+    
     #searchbar1{
       text-align:center;
     }
+
     #testing1{
       text-align:center;
     }
@@ -116,17 +119,21 @@
     <!--  @media on-->
     <!--</div>-->
     <div class="container-fluid" id="testing1">
+
+  </style>
+  
+    <div class="container-fluid">
+
       <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>
       <form method="post" class= "example" action="/result" style="margin:auto;max-width:300px" id="searchbar1">
-        <input type="text" placeholder="Search.." name="name">
+        <input type="text" placeholder="Search anime/manga" name="name">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
+      <img src="https://media.giphy.com/media/uxebmaHfjsuCA/giphy.gif" alt="Tree" class="responsive" width="600" height="400">
     </div>   
     <div class="container-fluid">
       <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148">
     </div>
-    
-    
     <!--<?php-->
     <!--  require __DIR__ . '/vendor/autoload.php';-->
     <!--  use Jikan\Jikan;-->
@@ -139,5 +146,8 @@
 
     <!--  $topAnime = $jikan->TopAnime(2);-->
     <!--?>-->
+    <!--<div class="container-fluid">-->
+    <!--  <p><%#= @airing_array %></p>-->
+    <!--</div>-->
   </body>
 </html>
