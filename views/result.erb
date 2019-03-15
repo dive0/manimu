@@ -103,7 +103,7 @@
             <h3><%= info %></h3>
           <% end %>
           
-          <% if info.include?("Vintage: ") == true %>
+          <% if info.include?("Vintage: ") %>
             <% i += 1 %>
             <img src=<%= @user_anime_manga.images[i] %>>
           <% end %>

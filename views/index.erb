@@ -133,8 +133,39 @@
           <br>
         <% end %>
       <% end %>
-      
-      
     </div>
+    
+    <div class="container-fluid">
+      <h1>Top 10 Animes</h1>
+      <% i = 0 %>
+      <% @top_anime_info.each do |info| %>
+        <h3><%= info %></h3>
+        <% if info.include?("Rank: ") %>
+          <img src=<%= @top_anime_img[i] %>>
+          <% i += 1 %>
+        <% end %>
+        
+        <% if info.include?("Score: ") %>
+          <br>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="container-fluid">
+      <h1>Top 10 Mangas</h1>
+      <% i = 0 %>
+      <% @top_manga_info.each do |info| %>
+        <h3><%= info %></h3>
+        <% if info.include?("Rank: ") %>
+          <img src=<%= @top_manga_img[i] %>>
+          <% i += 1 %>
+        <% end %>
+        
+        <% if info.include?("Score: ") %>
+          <br>
+        <% end %>
+      <% end %>
+    </div>
+    
   </body>
 </html>

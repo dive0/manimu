@@ -22,21 +22,79 @@ class ApplicationController < Sinatra::Base
           @airing_img << value
         elsif key == "title"
           @airing_info << value
+        elsif key == "type"
+          @airing_info << "Type: " + value
         elsif key == "rank"
           @airing_info << "Rank: " + value.to_s
         elsif key == "episodes"
-          @airing_info << "Episodes: " + value.to_s
+          if value == nil
+            @airing_info << "Episodes: Unknown"
+          else
+            @airing_info << "Episodes: " + value.to_s
+          end
         elsif key == "score"
           @airing_info << "Score: " + value.to_s
         end
       end
     end
     
-    top_anime_url = "https://api.jikan.moe/v3/top/anime/1"
+    top_anime_url = "https://api.jikan.moe/v3/top/anime"
     top_anime_uri = URI(top_anime_url)
     top_anime_response = Net::HTTP.get(top_anime_uri)
-    pp top_anime_array = JSON.parse(top_anime_response)
+    top_anime_array = JSON.parse(top_anime_response)
+    @top_anime_info = []
+    @top_anime_img = []
     
+    top_anime_array["top"][0..9].each do |anime|
+      anime.each do |key, value|
+        if key == "image_url"
+          @top_anime_img << value
+        elsif key == "title"
+          @top_anime_info << value
+        elsif key == "type"
+          @top_anime_info << "Type: " + value
+        elsif key == "rank"
+          @top_anime_info << "Rank: " + value.to_s
+        elsif key == "episodes"
+          if value == nil
+            @top_anime_info << "Episodes: Unknown"
+          else
+            @top_anime_info << "Episodes: " + value.to_s
+          end
+        elsif key == "score"
+          @top_anime_info << "Score: " + value.to_s
+        end
+      end
+    end
+    
+    top_manga_url = "https://api.jikan.moe/v3/top/manga"
+    top_manga_uri = URI(top_manga_url)
+    top_manga_response = Net::HTTP.get(top_manga_uri)
+    top_manga_array = JSON.parse(top_manga_response)
+    @top_manga_info = []
+    @top_manga_img = []
+    
+    top_manga_array["top"][0..9].each do |manga|
+      manga.each do |key, value|
+        if key == "image_url"
+          @top_manga_img << value
+        elsif key == "title"
+          @top_manga_info << value
+        elsif key == "type"
+          @top_manga_info << "Type: " + value
+        elsif key == "rank"
+          @top_manga_info << "Rank: " + value.to_s
+        elsif key == "volumes"
+          if value == nil
+            @top_manga_info << "Volumes: Unknown"
+          else
+            @top_manga_info << "Volumes: " + value.to_s
+          end
+        elsif key == "score"
+          @top_manga_info << "Score: " + value.to_s
+        end
+      end
+    end
     
     erb :index
   end
