@@ -70,7 +70,12 @@
         -moz-transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg);
         transform: rotate(-135deg);
-}
+      }
+      #centering{
+        padding-left:500px;
+        padding-right:500px;
+        text-align:center;
+      }
     </style>
   
   <!--  <div>-->
@@ -80,11 +85,13 @@
   <!--</div>-->
   
     <div class="container-fluid">
-      <a href="https://ruby-xavierj2216.c9users.io/">
+      <div class="col-sm-6 col-md-9 col-lg-12">
+        <a href="https://ruby-xavierj2216.c9users.io/">
         <span class="left"></span>
       </a>
       <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>
       <!--<button onclick="history.go(-1);" class="myButton">Back </button>-->
+
       <br><br>
       
       <% if @user_anime_manga.combined_info == ["Sorry, Anime and or Manga not found"] %>
@@ -109,7 +116,9 @@
           <% end %>
         <% end %>
       <% end %>
+      </div>
     </div>
+      
     
   </body>
 </html>
