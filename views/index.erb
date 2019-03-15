@@ -24,6 +24,15 @@
   <style>
     body {
       background-image: url("https://media.giphy.com/media/uxebmaHfjsuCA/giphy.gif");
+      background-color: lightblue;
+      background-repeat:no-repeat;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      -o-background-size:cover;
+      background-size:cover;
+      background-position:center;
+      /*opacity: 0.1;*/
+      /*filter: alpha(opacity=10);*/
     }
 
     .sidenav {
@@ -111,6 +120,7 @@
   <!--      <button type="submit"><i class="fa fa-search"></i></button>-->
   <!--    </form>-->
       <!--<img src="https://media.giphy.com/media/uxebmaHfjsuCA/giphy.gif" alt="Tree" class="responsive" width="600" height="400">-->
+
   <!--  </div>   -->
   <!--  <div class="container-fluid">-->
   <!--    <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148">-->
@@ -118,9 +128,24 @@
     <!--<?php-->
     <!--  require __DIR__ . '/vendor/autoload.php';-->
     <!--  use Jikan\Jikan;-->
+    <!--</div>   -->
 
-    <!--  $jikan = new Jikan;-->
+    <div class="container-fluid">
+      <h1>Top 10 Currently Airing Animes</h1>
+      <% i = 0 %>
+      <% @airing_info.each do |info| %>
+        <h3><%= info %></h3>
+        <% if info.include?("Rank: ") %>
+          <img src=<%= @airing_img[i] %>>
+          <% i += 1 %>
+        <% end %>
+        
+        <% if info.include?("Score: ") %>
+          <br>
+        <% end %>
+      <% end %>
       
+
     <!--  use \Jikan\Helper\Constants;-->
 
     <!--  $topAnime = $jikan->TopAnime();-->
@@ -167,5 +192,6 @@
           </div>
         </div>
       </div>
+    </div>
   </body>
 </html>
