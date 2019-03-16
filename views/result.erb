@@ -111,10 +111,9 @@
       <% end %>
       
       <img src=<%= @user_anime_manga.images[0] %>>
-      <% i=0 %>
-      <% title_tag = "" %>
+      <% i=1 %>
       <% next_item = "" %>
-      <% while i+1<@user_anime_manga.images.length %>
+      <% while i<=@user_anime_manga.images.length %>
         <% @user_anime_manga.combined_info.each_with_index do |info, index| %>
           
           <% if info.include?('Genres: ') %>
@@ -129,14 +128,15 @@
           
           <% if @user_anime_manga.combined_info[index+1].nil? %>
             <% next_item = "" %>
+            <% i += 1 %>
           <% else %>
             <% next_item = @user_anime_manga.combined_info[index+1] %>
           <% end %>
           
           <% if next_item.include?('Title: ') %>
             <br><br>
-            <% i += 1 %>
             <img src=<%= @user_anime_manga.images[i] %>>
+            <% i += 1 %>
           <% end %>
         <% end %>
       <% end %>
