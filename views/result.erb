@@ -99,71 +99,49 @@
   <!--      <span class="left"></span>-->
   <!--    </a>-->
   <!--</div>-->
-  
+    <a id="top"></a>
     <div class="container-fluid">
       <div class="col-sm-6 col-md-9 col-lg-12">
         <a href="https://ruby-dive0.c9users.io/">
         <span class="left"></span>
       </a>
       <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>
-      <!--<button onclick="history.go(-1);" class="myButton">Back </button>-->
 
       <br><br>
       
       <div class="container-fluid">
         <div class="row">
-          <!--<div class="text-center">-->
-            
             <% i=0 %>
             <% next_item = "" %>
-      <%# while i<=@user_anime_manga.images.length %>
             <% @user_anime_manga.combined_info.each_with_index do |info, index| %>
-                <% if info == "Sorry, Anime and or Manga not found" %>
-                  <h2>Sorry, Anime and or Manga not found</h2>
-                <% elsif info.include?('Title: ') %>
-                  <!--<div class="col-sm-6">-->
-                    <img src=<%= @user_anime_manga.images[i] %>>
-                    <% i += 1 %>
-                  <!--</div>-->
-                  <!--<div class="col-sm-6">-->
-                    <% info.slice!('Title: ') %>
-                    <h3><%= info %></h3>
-                  <!--</div>-->
-                <% elsif info.include?('Genres: ') %>
-                  <!--<div class="col-sm-6">-->
-                    <% info.slice!('Genres: ') %>
-                    <h3 class="col-sm-12"><em><%= info.capitalize %></em></h3>
-                  <!--</div>-->
-                <% else %>
-                  <!--<div class="col-sm-6">-->
-                    <h3><%= info %></h3>
-                  <!--</div>-->
-                <% end %>
-                
-                <% if @user_anime_manga.combined_info[index+1].nil? %>
-                  <% next_item = "" %>
-                  
-                <% else %>
-                  <% next_item = @user_anime_manga.combined_info[index+1] %>
-                <% end %>
-          
-                <% if next_item.include?('Title: ') %>
-                  <br><h4 style="color: green;">* * * * * * * * * * * * * * * * * * * *</h4><br>
-                <% end %>
-
-
-          
-          <%# if next_item.include?('Title: ') %>
-            <!--<br><br>-->
-            <!--<img src=<%#= @user_anime_manga.images[i] %>>-->
-            <%# i += 1 %>
-          <%# end %>
+              <% if info == "Sorry, Anime and or Manga not found" %>
+                <h2>Sorry, Anime and or Manga not found</h2>
+              <% elsif info.include?('Title: ') %>
+                <img src=<%= @user_anime_manga.images[i] %>>
+                <% i += 1 %>
+                <% info.slice!('Title: ') %>
+                <h3><%= info %></h3>
+              <% elsif info.include?('Genres: ') %>
+                <% info.slice!('Genres: ') %>
+                <h3 class="col-sm-12"><em><%= info.capitalize %></em></h3>
+              <% else %>
+                <h3><%= info %></h3>
               <% end %>
-      <%# end %>
-            <!--</div>-->
+              
+              <% if @user_anime_manga.combined_info[index+1].nil? %>
+                <% next_item = "" %>
+              <% else %>
+                <% next_item = @user_anime_manga.combined_info[index+1] %>
+              <% end %>
+        
+              <% if next_item.include?('Title: ') %>
+                <br><h4 style="color: green;">* * * * * * * * * * * * * * * * * * * *</h4><br>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
+      <a href="#top"><h4 style="color: blue;">To the top</h4></a>
     </div>
   </body>
 </html>
