@@ -22,7 +22,6 @@ class Anime_and_manga
                     item2.children.each do |item3|
                         item3.children.each do |item4|
                             @combined_info << "Title: " + item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
-                        # item4.children.gsub!(/[a-zA-Z 0-9\.\,\+\-\?\!\(\)]*/)
                             item4.children.each do |item5|
                                 if item5.attributes.include?("type") == true
                                     if item5.attributes["type"].value == "Genres"
