@@ -22,15 +22,6 @@
   </head>
   <body>
   <style>
-    body {
-      background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg");
-      background-color: lightblue;
-      background-repeat:no-repeat;
-       background-size: cover;
-      background-position:center;
-      /*opacity: 0.1;*/
-      /*filter: alpha(opacity=10);*/
-    }
 
     .sidenav {
       height: 100%;
@@ -70,17 +61,6 @@
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
     }
-    .topnav {
-      overflow: hidden;
-      background-color: #5696D6;
-    }
-
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-    
-    }
     
     /*#searchbar1{*/
     /*  text-align:center;*/
@@ -90,33 +70,29 @@
     /*  text-align:center;*/
     
     }
-    #centering{
-      /*padding-left:500px;*/
-      /*padding-right:500px;*/
-      text-align: center;
-    }
-    h1 {
-      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-      color: #26619c;
-    }
-    .section {
-      font-family: Verdana, Geneva, sans-serif;
-      color: blue;
-    }
-    h3 {
-      font-family: "Times New Roman", Times, serif;
-      color: purple;
-    }
-    
-    @media(max-width: 768px) {
-      h3 {
-        text-align: center;
-      }
-    }
-    
-    
+    /*
   </style>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+  </div>
 
+  <div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      // document.body.style.backgroundColor = "white";
+    }
+  </script>
+  
   <div class="container">
   </div>
     <!--<div class="container" id="testing1">-->
