@@ -48,3 +48,28 @@ form.example::after {
   text-align: center;
 }
 
+#centering{
+      /*padding-left:500px;*/
+      /*padding-right:500px;*/
+      text-align: center;
+    }
+    h1 {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      color: #26619c;
+    }
+    .section {
+      font-family: Verdana, Geneva, sans-serif;
+      color: blue;
+    }
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      color: purple;
+    }
+    
+    @media(max-width: 768px) {
+      h3 {
+        text-align: center;
+      }
+    }
+    
+
