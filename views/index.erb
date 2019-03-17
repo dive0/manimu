@@ -34,7 +34,7 @@
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
-  }
+    }
 
     .sidenav a {
       padding: 8px 8px 8px 32px;
@@ -70,15 +70,18 @@
     /*  text-align:center;*/
     
     }
-    /*
+
   </style>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Home</a>
+    <a href="#top">Home</a>
+    <a href="#airing">Top Airing Animes</a>
+    <a href="#anime">Top Animes</a>
+    <a href="#manga">Top Mangas</a>
   </div>
 
   <div id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="font-size:30px; cursor:pointer; position: fixed; left: 15px; top: 15px" onclick="openNav()">&#9776;</span>
   </div>
   <script>
     function openNav() {
@@ -95,44 +98,12 @@
   
   <div class="container">
   </div>
-    <!--<div class="container" id="testing1">-->
-    <!--  <div class="col-md-4">-->
-    <!--    <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>-->
-    <!--  </div>-->
-    <!--  <div class = "col-md-4"></div>-->
-    <!--  @media on-->
-    <!--</div>-->
-  <!--  <div class="container-fluid" id="testing1">-->
-
-  <!--</style>-->
-  
-  <!--  <div class="container-fluid">-->
-
-  <!--    <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>-->
-  <!--    <form method="post" class= "example" action="/result" style="margin:auto;max-width:300px" id="searchbar1">-->
-  <!--      <input type="text" placeholder="Search anime/manga" name="name">-->
-  <!--      <button type="submit"><i class="fa fa-search"></i></button>-->
-  <!--    </form>-->
-      <!--<img src="https://media.giphy.com/media/uxebmaHfjsuCA/giphy.gif" alt="Tree" class="responsive" width="600" height="400">-->
-
-  <!--  </div>   -->
-  <!--  <div class="container-fluid">-->
-  <!--    <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148">-->
-  <!--  </div>-->
-    <!--<?php-->
-    <!--  require __DIR__ . '/vendor/autoload.php';-->
-    <!--  use Jikan\Jikan;-->
-    <!--</div>   -->
-
-
-
     <div class="container" id="centering">
       <div class="text-center">
         <div class="row">
           <div class="col-sm-12">
-          <!--.col-sm-12 .col-md-6 .col-lg-4-->
             <div class="container-fluid">
-              <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px">Manimu</h1><br>
+              <h1><img src="https://github.com/dive0/manimu/blob/master/images/manimulogo.png?raw=true" id="logo" style="width:100px;height:120px"><a id="top"></a>Manimu</h1><br>
                 <form method="post" class= "example" action="/result" style="margin:auto;max-width:300px" id="searchbar1">
                   <input type="text" placeholder="Search anime/manga" name="name">
                   <button type="submit"><i class="fa fa-search"></i></button>
@@ -150,6 +121,7 @@
       </div>
     </div>
     
+    <a id="airing"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
@@ -179,6 +151,7 @@
       </div>
     </div>
     
+    <a id="anime"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
@@ -208,6 +181,7 @@
       </div>
     </div>
     
+    <a id="manga"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
