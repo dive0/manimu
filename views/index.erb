@@ -64,12 +64,13 @@
 
   </style>
   
+  <!--This is the sidenav  -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#top">Home</a>
-    <a href="#airing">Top Airing Animes</a>
-    <a href="#anime">Top Animes</a>
-    <a href="#manga">Top Mangas</a>
+    <a href="#airing">Top Airing Anime</a>
+    <a href="#anime">Top Anime</a>
+    <a href="#manga">Top Manga</a>
     <a href="#credit">Credits</a>
   </div>
 
@@ -87,6 +88,7 @@
     }
   </script>
   
+  <!-- This shows the logo, title, search bar, and search button-->
   <div class="container">
   </div>
     <div class="container" id="centering">
@@ -103,21 +105,21 @@
             
             <br><br>
             
-            <div class="container-fluid">
-                <a href="https://www.animenewsnetwork.com/encyclopedia/reports.php?id=148"></a>
-            </div>
           </div>
         </div>
       </div>
     </div>
     
+    <!-- This shows the top currently airing anime -->
     <a id="airing"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
           <div class="text-center section">
-            <h1>Top 10 Currently Airing Animes</h1>
+            <h1>Top 10 Currently Airing Anime</h1>
           </div>
+          
+          <!-- Iterating through the array to show the information-->
           <% i = 0 %>
           <% @airing_info.each do |info| %>
             <div class="text-center col-sm-6">
@@ -141,13 +143,16 @@
       </div>
     </div>
     
+    <!-- This shows the top anime -->
     <a id="anime"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
           <div class="text-center section">
-            <h1>Top 10 Animes</h1>
+            <h1>Top 10 Anime</h1>
           </div>
+          
+          <!-- Iterating through the array to show the information-->
           <% i = 0 %>
           <% @top_anime_info.each do |info| %>
             <div class="text-center col-sm-6">
@@ -171,13 +176,16 @@
       </div>
     </div>
     
+    <!-- This shows the top manga -->
     <a id="manga"></a>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="row">
           <div class="text-center section">
-            <h1>Top 10 Mangas</h1>
+            <h1>Top 10 Manga</h1>
           </div>
+          
+          <!-- Iterating through the array to show the information-->
           <% i = 0 %>
           <% @top_manga_info.each do |info| %>
             <div class="text-center col-sm-6">
@@ -201,6 +209,7 @@
       </div>
     </div>
     
+    <!-- Credit for the APIs and background image -->
     <a id="credit"></a>
     <h4 style="text-align: center">Credits: <br><br>API from Anime News Network and Jikan</h4>
     <h4 style="text-align: center"><br>background image: visme.co</h4>

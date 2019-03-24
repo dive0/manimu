@@ -89,6 +89,7 @@
       }
     </style>
 
+    <!-- Shows the logo and backbutton-->
     <a id="top"></a>
     <div class="container-fluid">
       <div class="col-sm-6 col-md-9 col-lg-12">
@@ -99,11 +100,14 @@
 
       <br><br>
       
+      <!-- iterate through the array -->
       <div class="container-fluid">
         <div class="row">
             <% i=0 %>
             <% next_item = "" %>
             <% @user_anime_manga.combined_info.each_with_index do |info, index| %>
+              
+              <!-- shows each information when the condition is met -->
               <% if info == "Sorry, Anime and or Manga not found" %>
                 <h2>Sorry, Anime and or Manga not found</h2>
               <% elsif info.include?('Title: ') %>
@@ -118,12 +122,14 @@
                 <h3><%= info %></h3>
               <% end %>
               
+              <!-- Get the value of the next index of the array -->
               <% if @user_anime_manga.combined_info[index+1].nil? %>
                 <% next_item = "" %>
               <% else %>
                 <% next_item = @user_anime_manga.combined_info[index+1] %>
               <% end %>
-        
+              
+              <!-- add * before the next anime/manga as separator -->
               <% if next_item.include?('Title: ') %>
                 <br><h4 style="color: green;">* * * * * * * * * * * * * * * * * * * *</h4><br>
               <% end %>
@@ -131,6 +137,7 @@
           </div>
         </div>
       </div>
+      <!-- back to the top -->
       <a href="#top"><h4 style="color: blue;">To the top</h4></a>
     </div>
   </body>

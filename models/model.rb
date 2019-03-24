@@ -15,12 +15,15 @@ class Anime_and_manga
     
     def get_info
         begin
+            #parse xml
             anime_manga = Nokogiri::HTML(open('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~'+@name))
         
+            #iterating through the hash
             anime_manga.children.each do |item1|
                 item1.children.each do |item2|
                     item2.children.each do |item3|
                         item3.children.each do |item4|
+                        #shovel the inforamtion into an array if the value is equal to the specified string
                             @combined_info << "Title: " + item4.attributes["name"].value + " (" + item4.attributes["type"].value + ")"
                             item4.children.each do |item5|
                                 if item5.attributes.include?("type") == true
@@ -41,6 +44,7 @@ class Anime_and_manga
                                     end 
                                 end
 
+                                #get the link of the images
                                 if item5.attributes.include?("src") == true
                                 @images << item5.attributes["src"].value
                                 end
